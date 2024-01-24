@@ -10,7 +10,7 @@ Using YOLO Object Detection with SAHI Inference
   Object detection diatas, jika ditambahkan metode SAHI (Slicing Aided Hyper Inference) diharapkan akan menambah performa dari proses pendeteksian asap sehingga mendapatkan hasil yang lebih baik terutama pada object gambar asap yang memiliki resolusi tinggi. SAHI adalah library yang dirancang untuk mengoptimalkan algoritma object detection pada gambar berskala besar dan beresolusi tinggi. Fungsi inti SAHI terletak pada pemotongan gambar menjadi potongan-potongan yang dapat dikelola, menjalankan deteksi objek pada setiap potongan, dan kemudian menyatukan hasilnya kembali. SAHI kompatibel dengan berbagai model deteksi objek, termasuk seri YOLO, sehingga menawarkan fleksibilitas sambil memastikan penggunaan sumber daya komputasi yang dioptimalkan.
 
 ## Dataset
-The dataset can be downloaded from `https://universe.roboflow.com/brad-dwyer/wildfire-smoke/dataset/1`. This dataset has already been annotate and i downloaded using YOLOv8 format. 
+Dataset ini didapatkan melalui website `https://universe.roboflow.com/brad-dwyer/wildfire-smoke/dataset/1`. Semua file image pada dataset ini telah dilakukan anotasi dan dipisahkan kedalam Train, Test, dan Validasi kemudian dilakukan export ke dalam format YOLOv8.
 
 ## Result
   Training yang menggunakan base model yolov8 versi nano menggunakan custom dataset menghasilkan deteksi yang cukup baik dengan nilai matriks maP50, F1-Score, Precision, dan Recall sebagai berikut:
@@ -18,4 +18,4 @@ The dataset can be downloaded from `https://universe.roboflow.com/brad-dwyer/wil
 |-----------|-----------|-----------|--------|
 |   85,68%  |  81,00%   |   73,1%   |  95%   |
 
-  Dengan menggunakan object detection ditambahkan menggunakan yolov8 dengan metode inference SAHI, custom model memiliki performa lebih baik lagi. Dimana hasil dari deteksi menggunakan YOLO pada kasus [no Detection] menghasilkan [detection] jika menggunakan SAHI sebagai metode inference. Hasil ini dapat terlihat pada notebook. Sehingga dapat disimpulkan bahwa SAHI berfungsi sangat baik untuk kasus deteksi pada object yang berukuran sangat kecil dan berhasil dibuktikan untuk kasus deteksi asap kebakaran hutan lindung.
+  Dengan menggunakan object detection ditambahkan menggunakan yolov8 dengan metode inference SAHI, custom model memiliki performa lebih baik lagi. Dimana hasil dari deteksi menggunakan YOLO pada kasus `no Detection` menghasilkan `detection` jika menggunakan SAHI sebagai metode inference. Hasil ini dapat terlihat pada file `wildfire_detection.ipynb`, sehingga dapat disimpulkan bahwa SAHI berfungsi sangat baik untuk kasus deteksi pada object yang berukuran sangat kecil dan berhasil dibuktikan untuk kasus deteksi asap kebakaran hutan lindung.
