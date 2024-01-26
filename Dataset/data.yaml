@@ -1,0 +1,13 @@
+train: D:/yolov8/Wildfire_Detection/Wildfire_Detection/Dataset/train/images
+val: D:/yolov8/Wildfire_Detection/Wildfire_Detection/Dataset/valid/images
+test: D:/yolov8/Wildfire_Detection/Wildfire_Detection/Dataset/test/images
+
+nc: 1
+names: ['smoke']
+
+roboflow:
+  workspace: brad-dwyer
+  project: wildfire-smoke
+  version: 1
+  license: BY-NC-SA 4.0
+  url: https://universe.roboflow.com/brad-dwyer/wildfire-smoke/dataset/1
